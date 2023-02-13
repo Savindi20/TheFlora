@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.TheFlora.conroller.DeliveryFormController">
+   <children>
+      <TableView fx:id="table_users" layoutX="423.0" layoutY="182.0" prefHeight="315.0" prefWidth="890.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="325.0">
+         <columns>
+            <TableColumn fx:id="col_DeliveryID" prefWidth="169.0" text="Delivery ID" />
+            <TableColumn fx:id="col_Date" prefWidth="190.0" text="Date" />
+            <TableColumn fx:id="col_Price" prefWidth="173.99998474121094" text="Price" />
+            <TableColumn fx:id="col_status" prefWidth="236.0" text="Status" />
+            <TableColumn fx:id="col_OrderID" prefWidth="200.0" text="Order ID " />
+         </columns>
+      </TableView>
+      <Label layoutX="58.0" layoutY="126.0" prefHeight="17.0" prefWidth="58.0" text="Delivery ID" />
+      <Label layoutX="467.0" layoutY="126.0" prefHeight="17.0" prefWidth="40.0" text="Price" />
+      <Label layoutX="71.0" layoutY="190.0" text="Status" />
+      <Button layoutX="848.0" layoutY="88.0" mnemonicParsing="false" onAction="#btnAddOnAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #2d3436; -fx-background-radius: 20;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="848.0" layoutY="143.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-color: #2d3436; -fx-background-radius: 20;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="848.0" layoutY="196.0" mnemonicParsing="false" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #2d3436; -fx-background-radius: 20;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="848.0" layoutY="253.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: #2d3436; -fx-background-radius: 20;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <JFXTextField fx:id="txtDeliveryID" layoutX="148.0" layoutY="119.0" prefHeight="31.0" prefWidth="292.0" />
+      <JFXTextField fx:id="txtStatus" layoutX="148.0" layoutY="183.0" prefHeight="31.0" prefWidth="292.0" />
+      <JFXTextField fx:id="txtPrice" layoutX="540.0" layoutY="111.0" prefHeight="31.0" prefWidth="292.0" />
+      <Label layoutX="467.0" layoutY="199.0" prefHeight="17.0" prefWidth="58.0" text="Order ID" />
+      <JFXTextField fx:id="txtOrderID" layoutX="548.0" layoutY="181.0" prefHeight="31.0" prefWidth="292.0" />
+      <Label layoutX="16.0" layoutY="26.0" prefHeight="36.0" prefWidth="200.0" text="Delivery  Form" textFill="#b05e27">
+         <font>
+            <Font name="Baker Signet BT" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

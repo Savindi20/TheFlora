@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.TheFlora.conroller.PaymentFormController">
+   <children>
+      <JFXButton buttonType="RAISED" layoutX="504.0" layoutY="178.0" onAction="#addOnAction" prefHeight="31.0" prefWidth="72.0" style="-fx-background-color: #087CFA; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="701.0" layoutY="584.0" onAction="#payOnAction" prefHeight="46.0" prefWidth="121.0" style="-fx-background-color: #1ED760; -fx-background-radius: 10;" text="Pay" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXComboBox fx:id="cmbCrustId" layoutX="56.0" layoutY="83.0" onAction="#custIdOnActioon" prefHeight="25.0" prefWidth="134.0" promptText="Customer ID" />
+      <JFXComboBox fx:id="cmbitemId" layoutX="58.0" layoutY="120.0" onAction="#itemidOnAction" prefHeight="25.0" prefWidth="134.0" promptText="Item ID" />
+      <Label fx:id="txtTotal" layoutX="46.0" layoutY="581.0" text="0.00" textFill="RED">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCustomerName" layoutX="228.0" layoutY="168.0" promptText="Customer Name" />
+      <TextField fx:id="txtItemName" layoutX="227.0" layoutY="208.0" prefHeight="26.0" prefWidth="150.0" promptText="Item Name" />
+      <TableView fx:id="tblCart" layoutX="87.0" layoutY="298.0" prefHeight="255.0" prefWidth="739.0">
+         <columns>
+            <TableColumn fx:id="colCode" prefWidth="96.0" text="ID" />
+            <TableColumn fx:id="colDescription" prefWidth="196.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="111.0" text="Price" />
+            <TableColumn fx:id="colQty" prefWidth="110.0" text="QTY" />
+            <TableColumn fx:id="colTotalCost" prefWidth="128.0" text="Total Cost" />
+            <TableColumn fx:id="colButton" prefWidth="96.8887939453125" text="-----" />
+         </columns>
+      </TableView>
+      <TextField fx:id="txtItemQTy" layoutX="418.0" layoutY="83.0" prefHeight="26.0" prefWidth="150.0" promptText="QTY On Hand" />
+      <TextField fx:id="txtItemPrice" layoutX="419.0" layoutY="120.0" prefHeight="26.0" prefWidth="149.0" promptText="Price" />
+      <TextField fx:id="txtQTY" alignment="CENTER_RIGHT" layoutX="762.0" layoutY="83.0" prefHeight="26.0" prefWidth="65.0" promptText="QTY" />
+      <Label layoutX="23.0" layoutY="27.0" prefHeight="37.0" prefWidth="279.0" text="Order &amp; Payment  Form" textFill="#b05e27">
+         <font>
+            <Font name="Baker Signet BT" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="240.0" layoutY="88.0" text="Quntity On Hand " />
+      <Label layoutX="240.0" layoutY="124.0" text="Price of One" />
+      <Label layoutX="617.0" layoutY="87.0" prefHeight="17.0" prefWidth="94.0" text="Available Quntity" />
+      <Label layoutX="58.0" layoutY="172.0" prefHeight="17.0" prefWidth="94.0" text="Customer Name" />
+      <Label layoutX="56.0" layoutY="212.0" prefHeight="17.0" prefWidth="94.0" text="Item Name" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,123 @@
+DROP DATABASE theflora;
+CREATE DATABASE TheFlora;
+
+USE TheFlora;
+
+CREATE TABLE Employee(
+                         employeeID VARCHAR(6) NOT NULL,
+                         full_name VARCHAR(50),
+                         address VARCHAR(30),
+                         email VARCHAR(30),
+                         phoneNo INT(10),
+                         salary INT(8),
+                         CONSTRAINT PRIMARY KEY (employeeID)
+
+);
+
+INSERT INTO Employee VALUES('E001','dinanga','Ahangama','dinanga@gmail.com',0714339702,45000);
+INSERT INTO Employee VALUES('E002','sewmi','Galle','sewmi2344@gamil.com',0918723453,45000);
+INSERT INTO Employee VALUES('E003','savindi','Panadura','savindi11@gmail.com',0781797445,54000);
+INSERT INTO Employee VALUES('E004','sonali','matara','sonali@gmail.com',0115468932,45000);
+
+CREATE TABLE User(
+                     userID VARCHAR(6) NOT NULL,
+                     userName VARCHAR(30),
+                     password VARCHAR(30),
+                     role VARCHAR(30),
+                     employeeID VARCHAR(6),
+                     CONSTRAINT PRIMARY KEY (userID),
+                     CONSTRAINT FOREIGN KEY(employeeID) REFERENCES employee(employeeID) on Delete Cascade on Update Cascade
+);
+INSERT INTO User VALUES('U001','Admin','Admin1234','Admin','E003');
+INSERT INTO User VALUES('U003','User','User1234','User','E004');
+
+CREATE TABLE Customer(
+                         customerID VARCHAR(6) NOT NULL,
+                         full_name VARCHAR(30),
+                         address VARCHAR(30),
+                         email VARCHAR(30),
+                         phoneNo INT(10),
+                         userID VARCHAR(6),
+                         CONSTRAINT PRIMARY KEY (customerID),
+                         CONSTRAINT FOREIGN KEY(userID) REFERENCES User(userID) on Delete Cascade on Update Cascade
+);
+INSERT INTO Customer VALUES('C001','Sew','Galle','Sew@gmail.com','0711234567','U001');
+
+CREATE TABLE Orders(
+                       orderID  VARCHAR(6),
+                       date DATE,
+                       description VARCHAR(20),
+                       customerId VARCHAR(6),
+                       CONSTRAINT PRIMARY KEY (orderID),
+                       CONSTRAINT FOREIGN KEY(customerId) REFERENCES Customer(customerID) on Delete Cascade on Update Cascade
+);
+
+# insert into orders values ('OR001','2022-12-21','Roses','C001');
+
+CREATE TABLE Delivery(
+                         deliveryID VARCHAR(6) NOT NULL,
+                         date DATE,
+                         Price VARCHAR(6),
+                         status VARCHAR(6),
+                         orderID VARCHAR(6),
+                         CONSTRAINT PRIMARY KEY (deliveryID),
+                         CONSTRAINT FOREIGN KEY(orderID) REFERENCES Orders(orderID) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Supplier(
+                         supplierID VARCHAR(6) NOT NULL,
+                         full_name VARCHAR(30) NOT NULL,
+                         address VARCHAR(30),
+                         email VARCHAR(30),
+                         phoneNo INT(10) NOT NULL,
+                         userID VARCHAR(6),
+                         CONSTRAINT PRIMARY KEY (supplierID),
+                         CONSTRAINT FOREIGN KEY(userID) REFERENCES User(userID) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Payment(
+                        paymentID VARCHAR(6) NOT NULL,
+                        date DATE,
+                        cost VARCHAR(6),
+                        supplierID VARCHAR(6),
+                        CONSTRAINT PRIMARY KEY (paymentID),
+                        CONSTRAINT FOREIGN KEY(supplierID) REFERENCES Supplier(supplierID) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Stock(
+                      stockID VARCHAR(6) NOT NULL,
+                      St_name VARCHAR(50),
+                      quantity INT(5),
+                      description VARCHAR(20),
+                      CONSTRAINT PRIMARY KEY (stockID)
+);
+
+CREATE TABLE Item(
+                     itemID VARCHAR(6) NOT NULL,
+                     It_name VARCHAR(50),
+                     Price VARCHAR(6),
+                     description VARCHAR(20),
+                     stockID VARCHAR(6),
+                     qty int(10),
+                     CONSTRAINT PRIMARY KEY (itemID),
+                     CONSTRAINT FOREIGN KEY(stockID) REFERENCES Stock(stockID) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE OrderDetail(
+                            orderID VARCHAR(6),
+                            itemID VARCHAR(6) ,
+                            quantity INT(11),
+                            totalPrice DECIMAL(8,2),
+                            CONSTRAINT FOREIGN KEY (orderID) REFERENCES Orders(orderID) on Delete Cascade on Update Cascade,
+                            CONSTRAINT FOREIGN KEY (itemID) REFERENCES Item(itemID) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE StockDetail(
+                            stockID VARCHAR(6),
+                            supplierID VARCHAR(6),
+                            quantity INT(11),
+                            totalPrice VARCHAR(6),
+                            CONSTRAINT PRIMARY KEY (stockID,supplierID),
+                            CONSTRAINT FOREIGN KEY (stockID) REFERENCES Stock(stockID) on Delete Cascade on Update Cascade,
+                            CONSTRAINT FOREIGN KEY (supplierID) REFERENCES Supplier(supplierID) on Delete Cascade on Update Cascade
+);

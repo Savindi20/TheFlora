@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.TheFlora.conroller.OrderDetailFormController">
+   <children>
+      <TableView fx:id="table_users" layoutX="103.0" layoutY="111.0" prefHeight="566.0" prefWidth="890.0">
+         <columns>
+            <TableColumn fx:id="col_id" prefWidth="117.0" text="colOrder ID" />
+            <TableColumn fx:id="col_quantity" prefWidth="126.0" text="colQuantity" />
+            <TableColumn fx:id="col_Total" prefWidth="145.0" text="colTotal Price" />
+            <TableColumn fx:id="col_ItemID" prefWidth="142.0" text="colItem ID" />
+            <TableColumn fx:id="col_Date" prefWidth="171.0" text="date" />
+            <TableColumn fx:id="col_CustId" prefWidth="172.0" text="cust Id" />
+         </columns>
+      </TableView>
+      <Label layoutX="24.0" layoutY="29.0" prefHeight="37.0" prefWidth="222.0" text="Order Detail  Form" textFill="#b05e27">
+         <font>
+            <Font name="Baker Signet BT" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.TheFlora.conroller.UserDashboardFormConroller">
+   <children>
+      <VBox layoutX="-1.0" prefHeight="700.0" prefWidth="665.0" style="-fx-background-color: B05E27;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1080.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="100.0" prefWidth="638.0" style="-fx-background-color: B05E27;">
+               <children>
+                  <Label layoutX="21.0" layoutY="13.0" prefHeight="80.0" prefWidth="266.0" style="-fx-background-color: B05E27;" text="      User Dashboard" textAlignment="CENTER">
+                     <font>
+                        <Font name="Baskerville Old Face" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton buttonType="RAISED" onAction="#ManageCustomerOnAction" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: B05E27;" text="Manage Customer">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#ManagePaymentOnAction" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: B05E27;" text="Order &amp; Payment Form">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#OrderDetailOnAction" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: B05E27;" text="Order Detail">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#StockDetailOnAction" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: B05E27;" text="Stock Detail">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#DeliveryDetailsOnAction" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: B05E27;" text="Delivery Details">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+            <JFXButton buttonType="RAISED" onAction="#LogOutOnAction" prefHeight="75.0" prefWidth="300.0" style="-fx-background-color: B05E27;" text="LogOut     ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></JFXButton>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="mainPane" layoutX="308.0" prefHeight="700.0" prefWidth="1094.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="308.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutX="790.0" layoutY="14.0" prefHeight="212.0" prefWidth="232.0" style="-fx-background-color: F5EBE0;">
+               <children>
+                  <Label layoutX="39.0" layoutY="14.0" prefHeight="21.0" prefWidth="155.0" text="                Delivery" textAlignment="CENTER" />
+                  <Label fx:id="txtDelivery" layoutX="22.0" layoutY="124.0" prefHeight="81.0" prefWidth="199.0" styleClass="txt" text="                2" textAlignment="CENTER" />
+                  <ImageView fitHeight="54.0" fitWidth="55.0" layoutX="82.0" layoutY="45.0">
+                     <image>
+                        <Image url="@../assets/image/delivery.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="28.0" layoutY="14.0" prefHeight="212.0" prefWidth="232.0" style="-fx-background-color: F5EBE0;">
+               <children>
+                  <Label layoutX="52.0" layoutY="14.0" prefHeight="21.0" prefWidth="155.0" text="                  Order" />
+                  <Label fx:id="txtOrder" layoutX="8.0" layoutY="118.0" prefHeight="81.0" prefWidth="199.0" styleClass="txt" text="                  2" textAlignment="CENTER" />
+                  <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="89.0" layoutY="52.0">
+                     <image>
+                        <Image url="@../assets/image/order.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="282.0" layoutY="14.0" prefHeight="212.0" prefWidth="232.0" style="-fx-background-color: F5EBE0;">
+               <children>
+                  <Label layoutX="46.0" layoutY="14.0" prefHeight="21.0" prefWidth="155.0" text="              Payment" />
+                  <Label fx:id="txtPayment" layoutX="17.0" layoutY="123.0" prefHeight="81.0" prefWidth="199.0" styleClass="txt" text="             2" textAlignment="CENTER" />
+                  <ImageView fitHeight="54.0" fitWidth="54.0" layoutX="89.0" layoutY="52.0">
+                     <image>
+                        <Image url="@../assets/image/payment.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="537.0" layoutY="14.0" prefHeight="212.0" prefWidth="232.0" style="-fx-background-color: F5EBE0;">
+               <children>
+                  <Label layoutX="52.0" layoutY="14.0" prefHeight="21.0" prefWidth="155.0" text="                 Stock" />
+                  <Label fx:id="txtStock" layoutX="30.0" layoutY="117.0" prefHeight="81.0" prefWidth="199.0" styleClass="txt" text="                      2" textAlignment="CENTER" />
+                  <ImageView fitHeight="54.0" fitWidth="55.0" layoutX="89.0" layoutY="52.0">
+                     <image>
+                        <Image url="@../assets/image/stock.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <HBox layoutX="28.0" layoutY="261.0" prefHeight="439.0" prefWidth="1080.0">
+               <children>
+                  <VBox prefHeight="190.0" prefWidth="459.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="467.0" text="WORKING TIME" />
+                        <LineChart fx:id="lineChart" prefHeight="355.0" prefWidth="435.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </VBox>
+                  <AnchorPane prefHeight="268.0" prefWidth="169.0" />
+                  <PieChart fx:id="pieChart" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
